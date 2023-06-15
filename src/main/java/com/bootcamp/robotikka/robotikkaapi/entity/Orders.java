@@ -1,6 +1,6 @@
 package com.bootcamp.robotikka.robotikkaapi.entity;
 
-import com.bootcamp.robotikka.robotikkaapi.entity.enums.OrderState;
+import com.bootcamp.robotikka.robotikkaapi.enums.OrderState;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

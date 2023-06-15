@@ -31,4 +31,7 @@ public class Product {
     private double sellingPrice;
     @OneToMany(mappedBy = "productPropertyId",cascade = CascadeType.ALL)
     private List<Orders> orderList;
+
+    @OneToMany(mappedBy = "productPropertyId",cascade = CascadeType.ALL)
+    private List<LovedProperty> lovedProperties;
 }
