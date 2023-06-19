@@ -41,4 +41,8 @@ public class User {
     private List<Orders> ordersList;
     @OneToMany(mappedBy = "userPropertyId", cascade = CascadeType.ALL )
     private List<LovedProperty> lovedProperties;
+
+    @OneToOne
+    @JoinColumn(name = "role_id",unique= true)
+    private UserRole userRole;
 }
