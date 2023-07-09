@@ -42,7 +42,7 @@ public class User {
     @OneToMany(mappedBy = "userPropertyId", cascade = CascadeType.ALL )
     private List<LovedProperty> lovedProperties;
 
-    @OneToOne
-    @JoinColumn(name = "role_id",unique= true)
+    @ManyToOne
+    @JoinColumn(name = "role_id")
     private UserRole userRole;
 }
