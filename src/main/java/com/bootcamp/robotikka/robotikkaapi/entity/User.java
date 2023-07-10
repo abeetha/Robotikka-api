@@ -33,8 +33,10 @@ public class User {
     private boolean isCredentialsNonExpired;
     @Column(name = "is_enabled")
     private boolean isEnabled;
-    @Column(name = "prefix")
+    @Column(name = "prefix",unique = true)
     private String prefix;
+    @Column(name = "otp")
+    private String otp;
     @Embedded
     private FileResource avatar;
     @OneToMany(mappedBy = "userPropertyId",cascade = CascadeType.ALL)

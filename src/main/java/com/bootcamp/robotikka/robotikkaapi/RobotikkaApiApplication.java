@@ -19,6 +19,8 @@ public class RobotikkaApiApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+
+
          userRoleService.initializeRoles();
 	}
 }
