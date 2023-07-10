@@ -29,4 +29,14 @@ public class UserController {
         ), HttpStatus.CREATED);
 
     }
+
+    @PostMapping(value = "/visitor/verify/{otp}",params = "email")
+    public ResponseEntity<StandardResponse>
+    verifyUser(@PathVariable String otp, @RequestBody String email){
+        CommonResponseDTO responseData = userService.verifyAccount(email,otp);
+        return new ResponseEntity<>(new StandardResponse(
+                responseData.getCode(), responseData.getMessage(), responseData.getData()
+        ), HttpStatus.CREATED);
+
+    }
 }

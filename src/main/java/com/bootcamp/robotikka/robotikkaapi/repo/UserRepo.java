@@ -17,4 +17,6 @@ public interface UserRepo extends JpaRepository<User,String> {
    public List<User> findAllAdmins(String admin);
 
    public Optional<User> findByPrefix(String prefix);
+
+   public Optional<User> findByEmail(String email);
 }
