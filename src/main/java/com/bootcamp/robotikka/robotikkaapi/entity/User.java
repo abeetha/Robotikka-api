@@ -23,6 +23,7 @@ public class User {
     private String contactNumber;
     @Embedded
     private UserNameResource name;
+    @Column(name = "email",unique = true)
     private String email;
     private String password;
     @Column(name = "is_account_non_expired")
