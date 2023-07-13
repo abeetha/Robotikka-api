@@ -44,4 +44,17 @@ public class ProductController {
                 HttpStatus.OK
         );
     }
+
+    @PutMapping("/member/modify/{}")
+    public ResponseEntity<StandardResponse> createProduct(
+            @RequestBody RequestProductDTO dto,
+            @PathVariable String id
+    ){
+        CommonResponseDTO updateData = productService.updateProduct(dto,id);
+        return new ResponseEntity<>(
+                new StandardResponse(updateData.getCode(),
+                        updateData.getMessage(),updateData.getData()),
+                HttpStatus.CREATED
+        );
+    }
 }

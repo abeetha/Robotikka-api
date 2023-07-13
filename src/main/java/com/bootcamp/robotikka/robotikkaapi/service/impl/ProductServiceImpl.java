@@ -46,6 +46,21 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
+    public CommonResponseDTO updateProduct(RequestProductDTO dto, String id) {
+        Optional<Product> selectedProduct = productRepo.findById(id);
+        if(selectedProduct.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        Product product = selectedProduct.get();
+        product.setDescription(dto.getDescription());
+        product.setDisplayName(dto.getDisplayName());
+        product.setSellingPrice(dto.getSellingPrice());
+        product.setUnitPrice(dto.getUnitPrice());
+        product.setQty(dto.getQty());
+        productRepo.save(product);
+        return new CommonResponseDTO(201,"Updated",null);
+    }
+
+    @Override
     public ResponseProductDTO findProduct(String id) {
         Optional<Product> selectedProduct = productRepo.findById(id);
         if(selectedProduct.isEmpty())
